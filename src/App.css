@@ -1,0 +1,21 @@
+@media (min-width: 600px) and (max-width: 1400px) {
+	body {
+		background: rgb(227, 250, 255);
+	}
+	#root {
+		text-align: center;
+		padding-left: 20%;
+		padding-right: 20%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	.TodoButton {
+		/* background: #61DAFA; */
+		margin-right: 7%;
+		margin-bottom: 8%;
+	}
+}
+
+body {
+	background: rgb(227, 250, 255);
+}
