@@ -6,6 +6,10 @@
 	color: blue;
 }
 
+.TodoCounter--loading {
+  opacity: 25%;
+}
+
 @media (max-width: 425px) {
 	.TodoCounter {
 		font-size:large;

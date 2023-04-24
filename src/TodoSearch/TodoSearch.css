@@ -23,6 +23,10 @@
 	outline-color: #61dafa;
 }
 
+.TodoSearch:disabled {
+  opacity: 25%;
+}
+
 @media (max-width: 425px) {
 	.TodoSearch {
 		font-size: smaller;
