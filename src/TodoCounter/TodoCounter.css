@@ -5,3 +5,12 @@
 	padding: 48px;
 	color: blue;
 }
+
+@media (max-width: 425px) {
+	.TodoCounter {
+		font-size:large;
+	}
+@media (max-width: 320px) {
+	.TodoCounter {
+		font-size: 13px;
+	}

@@ -61,5 +61,6 @@
 @media (max-width: 550px) {
 	.TodoButton {
 		position: relative;
+		left: 0px;
 	}
 }

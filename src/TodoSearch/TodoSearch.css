@@ -22,3 +22,12 @@
 .TodoSearch:focus {
 	outline-color: #61dafa;
 }
+
+@media (max-width: 425px) {
+	.TodoSearch {
+		font-size: smaller;
+	}
+@media (max-width: 320px) {
+	.TodoSearch {
+		font-size: 12px;
+	}
