@@ -11,24 +11,48 @@
 
 // export { TodoList };
 
+// import React from 'react';
+// import './TodoList.css'
+
+// function TodoList(props) {
+//   return (
+//     <section className='TodoList-container'>
+//       {props.error && props.onError()}
+//       {props.loading && props.onLoading()}
+      
+//       {(!props.loading && !props.searchedTodos.length) && props.onEmptyTodos()}
+
+//       {props.searchedTodos.map(todo => props.render(todo))}
+
+//       <ul>
+//         {props.children}
+//       </ul>
+//     </section>
+//   );
+// }
+
+// export { TodoList };
+
+
 import React from 'react';
 import './TodoList.css'
 
 function TodoList(props) {
+  const renderFunc = props.children || props.render;
+  
   return (
-    <section className='TodoList-container'>
+    <section className="TodoList-container">
       {props.error && props.onError()}
       {props.loading && props.onLoading()}
-      
-      {(!props.loading && !props.searchedTodos.length) && props.onEmptyTodos()}
 
-      {props.searchedTodos.map(todo => props.render(todo))}
+      {(!props.loading && !props.totalTodos) && props.onEmptyTodos()}
 
-      <ul>
-        {props.children}
-      </ul>
+      {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchText)}
+
+      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
     </section>
   );
 }
 
 export { TodoList };
+

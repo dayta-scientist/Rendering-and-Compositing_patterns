@@ -42,22 +42,7 @@ function App() {
           setSearchValue={setSearchValue}
         />
 
-			{/* <TodoList>
-				{error && <TodosError />}
-				{loading && <TodosLoading />}
-				{!loading && !searchedTodos.length && <EmptyTodos />}
-
-				{searchedTodos.map(todo => (
-					<TodoItem
-						key={uuid()}
-						text={todo.text}
-						completed={todo.completed}
-						onComplete={() => completeTodo(todo.text)}
-						onDelete={() => deleteTodo(todo.text)}
-					/>
-				))}
-			</TodoList> */}
-			<TodoList
+			{/* <TodoList
         error={error}
         loading={loading} 
         searchedTodos={searchedTodos}  
@@ -73,7 +58,31 @@ function App() {
             onDelete={() => deleteTodo(todo.text)}
           />
         )}
-      />    
+      />     */}
+
+			<TodoList
+        error={error}
+        loading={loading}
+        totalTodos={totalTodos}
+        searchedTodos={searchedTodos}
+        searchText={searchValue}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
+        onEmptyTodos={() => <EmptyTodos />}
+        onEmptySearchResults={
+          (searchText) => <p>No results for {searchText}</p>
+        }
+      >
+        {todo => (
+          <TodoItem
+            key={uuid()}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        )}
+      </TodoList>
 
 			{!!openModal && (
 				<Modal>
