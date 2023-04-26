@@ -13,7 +13,7 @@ import { TodosLoading } from '../TodosLoading';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { v4 as uuid } from 'uuid';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert';
+import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
 	const {
@@ -96,7 +96,9 @@ function App() {
 					/>
 				</Modal>
 			)}
-      <ChangeAlertWithStorageListener sincronize={sincronizeTodos}/>
+      <ChangeAlert
+        sincronize={sincronizeTodos}
+      />
 
 			<CreateTodoButton setOpenModal={setOpenModal} />
       
