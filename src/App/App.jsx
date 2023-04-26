@@ -46,23 +46,6 @@ function App() {
 					loading={loading}
         />
 
-			{/* <TodoList
-        error={error}
-        loading={loading} 
-        searchedTodos={searchedTodos}  
-        onError={() => <TodosError />}
-        onLoading={() => <TodosLoading />}
-        onEmptyTodos={() => <EmptyTodos />}
-        render={todo => (
-          <TodoItem
-            key={uuid()}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        )}
-      />     */}
 
 			<TodoList
         error={error}
