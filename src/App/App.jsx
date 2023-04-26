@@ -13,6 +13,7 @@ import { TodosLoading } from '../TodosLoading';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { v4 as uuid } from 'uuid';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
 function App() {
 	const {
@@ -28,6 +29,7 @@ function App() {
     searchValue, 
 		setSearchValue,
 		addTodo,
+    sincronizeTodos
 	} = useTodos();
 
 	return (
@@ -94,8 +96,10 @@ function App() {
 					/>
 				</Modal>
 			)}
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos}/>
 
 			<CreateTodoButton setOpenModal={setOpenModal} />
+      
 
 			<Footer />
 		</React.Fragment>
